@@ -148,7 +148,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-trigger:hover, .nav-group:focus-within .nav-trigger, .nav-group.is-open > .nav-trigger { color: #caffff; background: rgba(202, 255, 255, 0.06); }
 .nav-menu {
   position: absolute;
-  top: calc(100% + 0.7rem);
+  top: 100%;
   left: 0;
   width: 17rem;
   padding: 0.7rem;
