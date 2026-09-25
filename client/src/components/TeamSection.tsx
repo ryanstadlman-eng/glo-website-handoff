@@ -7,7 +7,7 @@ const team: TeamMember[] = [
   { name: "Peter Tomassi", title: "Chief Executive Officer" },
   { name: "Ady Das", title: "Chief Technologist" },
   { name: "Ryan Stadlman", title: "Chief Creative Officer" },
-  { name: "Archana Haran", title: "Director Technical Program Management" },
+  { name: "Archana Haran", title: "Director of Technical Program Management" },
   { name: "Tyler Heinerikson", title: "Head of Product" },
   { name: "Steven Cable", title: "Senior Financial Analyst" },
 ];
