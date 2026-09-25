@@ -22,7 +22,9 @@ export default function SiteHeader() {
   const [openMenu, setOpenMenuState] = useState<string | null>(null);
   const openMenuRef = useRef<string | null>(null);
   const hoverSuppressedRef = useRef(false);
+  const clickPinnedMenuRef = useRef<string | null>(null);
   const pointerGroupRef = useRef<string | null>(null);
+  const pointerLeaveTimerRef = useRef<number | null>(null);
   const pointerPositionRef = useRef({ x: -10000, y: -10000 });
   const suppressionOriginRef = useRef<{ x: number; y: number } | null>(null);
   const currentPath = normalizeNavigationPath(location);
@@ -38,11 +40,19 @@ export default function SiteHeader() {
     setOpenMenuState(menuId);
   };
 
+  const cancelPointerLeaveClose = () => {
+    if (pointerLeaveTimerRef.current === null) return;
+    window.clearTimeout(pointerLeaveTimerRef.current);
+    pointerLeaveTimerRef.current = null;
+  };
+
   useEffect(() => {
     const updateHeaderState = () => {
       setScrolled(window.scrollY > 8);
       if (openMenuRef.current || pointerGroupRef.current) {
+        cancelPointerLeaveClose();
         hoverSuppressedRef.current = true;
+        clickPinnedMenuRef.current = null;
         suppressionOriginRef.current = { ...pointerPositionRef.current };
         setDropdownSuppressed(true);
         setOpenMenu(null);
@@ -55,13 +65,16 @@ export default function SiteHeader() {
     window.addEventListener("scroll", updateHeaderState, { passive: true });
     window.addEventListener("pointermove", notePointerMovement, { passive: true });
     return () => {
+      cancelPointerLeaveClose();
       window.removeEventListener("scroll", updateHeaderState);
       window.removeEventListener("pointermove", notePointerMovement);
     };
   }, []);
 
   useEffect(() => {
+    cancelPointerLeaveClose();
     hoverSuppressedRef.current = false;
+    clickPinnedMenuRef.current = null;
     suppressionOriginRef.current = null;
     pointerGroupRef.current = null;
     setDropdownSuppressed(false);
@@ -113,6 +126,9 @@ export default function SiteHeader() {
               onPointerEnter={(event) => {
                 pointerPositionRef.current = { x: event.clientX, y: event.clientY };
                 pointerGroupRef.current = group.id;
+                const pinnedMenu = clickPinnedMenuRef.current;
+                if (pinnedMenu && pinnedMenu !== group.id && openMenuRef.current === pinnedMenu) return;
+                cancelPointerLeaveClose();
                 if (!hoverSuppressedRef.current) setOpenMenu(group.id);
               }}
               onPointerMove={(event) => {
@@ -120,16 +136,24 @@ export default function SiteHeader() {
               }}
               onPointerLeave={(event) => {
                 pointerGroupRef.current = null;
-                setOpenMenu(null);
+                cancelPointerLeaveClose();
                 const origin = suppressionOriginRef.current;
-                if (hoverSuppressedRef.current && origin && Math.hypot(event.clientX - origin.x, event.clientY - origin.y) >= 12) {
-                  hoverSuppressedRef.current = false;
-                  suppressionOriginRef.current = null;
-                  setDropdownSuppressed(false);
-                }
+                const exitPoint = { x: event.clientX, y: event.clientY };
+                pointerLeaveTimerRef.current = window.setTimeout(() => {
+                  pointerLeaveTimerRef.current = null;
+                  clickPinnedMenuRef.current = null;
+                  setOpenMenu(null);
+                  if (hoverSuppressedRef.current && origin && Math.hypot(exitPoint.x - origin.x, exitPoint.y - origin.y) >= 12) {
+                    hoverSuppressedRef.current = false;
+                    suppressionOriginRef.current = null;
+                    setDropdownSuppressed(false);
+                  }
+                }, 140);
               }}
               onFocus={() => {
+                cancelPointerLeaveClose();
                 hoverSuppressedRef.current = false;
+                clickPinnedMenuRef.current = null;
                 suppressionOriginRef.current = null;
                 setDropdownSuppressed(false);
                 setOpenMenu(group.id);
@@ -148,10 +172,17 @@ export default function SiteHeader() {
                   hoverSuppressedRef.current = false;
                   suppressionOriginRef.current = null;
                   setDropdownSuppressed(false);
-                  setOpenMenu(openMenu === group.id ? null : group.id);
+                  if (clickPinnedMenuRef.current === group.id && openMenuRef.current === group.id) {
+                    clickPinnedMenuRef.current = null;
+                    setOpenMenu(null);
+                  } else {
+                    clickPinnedMenuRef.current = group.id;
+                    setOpenMenu(group.id);
+                  }
                 }}
                 onKeyDown={(event) => {
                   if (event.key === "Escape") {
+                    clickPinnedMenuRef.current = null;
                     setOpenMenu(null);
                     event.currentTarget.blur();
                   }
@@ -163,7 +194,10 @@ export default function SiteHeader() {
               <div className="nav-menu" id={`nav-menu-${group.id}`}>
                 <span className="nav-menu-label">Explore {group.label.toLowerCase()}</span>
                 {group.links.map((link) => (
-                  <Link key={link.href} href={link.href} className={`nav-menu-link${activePath === link.href ? " is-current" : ""}`} aria-current={activePath === link.href ? "page" : undefined} onClick={() => setOpenMenu(null)}>
+                  <Link key={link.href} href={link.href} className={`nav-menu-link${activePath === link.href ? " is-current" : ""}`} aria-current={activePath === link.href ? "page" : undefined} onClick={() => {
+                    clickPinnedMenuRef.current = null;
+                    setOpenMenu(null);
+                  }}>
                     <span>{link.label}</span>
                     <span className="action-glyph">↗</span>
                   </Link>

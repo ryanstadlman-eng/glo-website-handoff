@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
 const EFFECTIVE_DATE = "September 17, 2026";
+const LEGAL_EMAIL = "legal@lanternglobal.ai";
 
 const legalPages = [
   ["Privacy Policy", "/privacy/"],
@@ -81,7 +82,7 @@ function TermsContent() {
         <p>You agree to indemnify and hold Lantern harmless from any claims, damages, or expenses (including reasonable attorneys’ fees) arising out of your violation of these Terms or misuse of the Site.</p>
       </LegalSection>
       <LegalSection id="copyright" title="12. Copyright Complaints">
-        <p>If you believe content on the Site infringes your copyright, notify us at <EmailLink address="tobias.lederberg@lanternglobal.ai" /> with a description of the work claimed to be infringed, the material you believe is infringing, and your contact information.</p>
+        <p>If you believe content on the Site infringes your copyright, notify us at <EmailLink address={LEGAL_EMAIL} /> with a description of the work claimed to be infringed, the material you believe is infringing, and your contact information.</p>
       </LegalSection>
       <LegalSection id="export" title="13. Export Compliance">
         <p>You agree to comply with all applicable export control and trade sanctions laws in connection with your access to and use of the Site.</p>
@@ -105,7 +106,7 @@ function TermsContent() {
         <p>We will not be liable for any failure or delay in performance resulting from causes beyond our reasonable control.</p>
       </LegalSection>
       <LegalSection id="contact" title="20. Contact">
-        <p>Questions about these Terms can be directed to <EmailLink address="tobias.lederberg@lanternglobal.ai" />.</p>
+        <p>Questions about these Terms can be directed to <EmailLink address={LEGAL_EMAIL} />.</p>
       </LegalSection>
     </>
   );
@@ -179,7 +180,7 @@ function PrivacyContent() {
         <p>We may update this Policy from time to time. The “Effective Date” above reflects the date of the most recent revision.</p>
       </LegalSection>
       <LegalSection id="contact" title="12. Contact Us">
-        <p>Questions about this Policy can be directed to <EmailLink address="tobias.lederberg@lanternglobal.ai" />.</p>
+        <p>Questions about this Policy can be directed to <EmailLink address={LEGAL_EMAIL} />.</p>
       </LegalSection>
     </>
   );
@@ -188,7 +189,7 @@ function PrivacyContent() {
 function SecurityContent() {
   return (
     <>
-      <p>Protecting the information entrusted to us by our customers, partners, and website visitors is a priority at Lantern LLC and its affiliates Lantern BRP, LLC and Lantern BRP Labs, LLC. This page describes the key elements of our security program. If you are evaluating Lantern as a vendor and need more detail than is appropriate to publish here, contact us at <EmailLink address="archana.haran@lanternglobal.ai" />. We’re glad to walk through our program directly, and additional documentation (including our SOC 2 materials, once available) can be shared under NDA.</p>
+      <p>Protecting the information entrusted to us by our customers, partners, and website visitors is a priority at Lantern LLC and its affiliates Lantern BRP, LLC and Lantern BRP Labs, LLC. This page describes the key elements of our security program. If you are evaluating Lantern as a vendor and need more detail than is appropriate to publish here, contact us at <EmailLink address={LEGAL_EMAIL} />. We’re glad to walk through our program directly, and additional documentation (including our SOC 2 materials, once available) can be shared under NDA.</p>
 
       <LegalSection id="governance" title="Governance">
         <p>Our security program is overseen at the executive level and is built around written information security policies covering access control, data classification, incident response, and vendor risk management. We conduct a risk assessment of our systems and practices at least annually.</p>
@@ -230,7 +231,7 @@ function SecurityContent() {
         <p>Lantern has completed a SOC 2 Type I examination of its security controls. A SOC 2 Type II examination is currently in progress. Summary information or the applicable report is available to customers and prospective customers under NDA upon request.</p>
       </LegalSection>
       <LegalSection id="disclosure" title="Responsible Disclosure">
-        <p>If you believe you have discovered a security vulnerability affecting Lantern’s systems, please report it to <EmailLink address="tobias.lederberg@lanternglobal.ai" />, including a description of the issue and steps to reproduce it.</p>
+        <p>If you believe you have discovered a security vulnerability affecting Lantern’s systems, please report it to <EmailLink address={LEGAL_EMAIL} />, including a description of the issue and steps to reproduce it.</p>
         <p>We ask that you:</p>
         <ul>
           <li>Give us a reasonable opportunity to investigate and remediate an issue before disclosing it publicly;</li>
@@ -240,7 +241,7 @@ function SecurityContent() {
         <p>We will not pursue legal action against researchers who make a good-faith effort to comply with this policy.</p>
       </LegalSection>
       <LegalSection id="contact" title="Contact">
-        <p>Security questions, and vulnerability reports, can be directed to <EmailLink address="archana.haran@lanternglobal.ai" />.</p>
+        <p>Security questions, and vulnerability reports, can be directed to <EmailLink address={LEGAL_EMAIL} />.</p>
       </LegalSection>
     </>
   );
