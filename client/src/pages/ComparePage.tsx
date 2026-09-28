@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageMeta from "@/components/PageMeta";
 import ComparisonTable from "@/components/ComparisonTable";
 
-const GLO_LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
+const GLO_LOGO = "/images/glo-wordmark-comparison.png";
 
 export default function ComparePage() {
   return (
@@ -27,12 +27,16 @@ export default function ComparePage() {
             <h1 className="comparison-title">
               <span className="comparison-title-line">
                 <span className="sr-only">Glo </span>
-                <img
-                  src={GLO_LOGO}
-                  alt=""
+                <span
+                  className="comparison-title-logo-frame"
                   aria-hidden="true"
-                  className="comparison-title-logo"
-                />
+                >
+                  <img
+                    src={GLO_LOGO}
+                    alt=""
+                    className="comparison-title-logo"
+                  />
+                </span>
                 <span>vs. the</span>
               </span>
               <span className="comparison-title-rest"> competition.</span>
@@ -53,40 +57,33 @@ export default function ComparePage() {
             </div>
 
             <ComparisonTable />
-            <p className="comparison-source-note">
-              Official vendor pages were used to verify product identity and
-              current public feature positioning.
-            </p>
             <p className="comparison-scroll-hint">
               On smaller screens, scroll the table horizontally to compare every
               platform.
             </p>
-          </div>
-        </section>
-
-        <section className="comparison-method">
-          <div className="container comparison-method-grid">
-            <div>
-              <p className="signal-label">How to read the table</p>
-              <h2>Compare the feature bundle, not a single checkbox.</h2>
-            </div>
-            <div className="comparison-method-copy">
-              <p>
-                <strong>Included</strong> means the product offers the feature
-                group as defined in that row. <strong>Not offered</strong> means
-                the complete feature group is not offered, even when a platform
-                may provide individual pieces.{" "}
-                <strong>Available by package</strong> means access depends on a
-                separate product or plan.{" "}
-                <strong>Not publicly documented</strong> means the reviewed
-                vendor materials did not establish the full capability.
+            <div className="comparison-table-information">
+              <p className="comparison-source-note">
+                Official vendor pages were used to verify product identity and
+                current public feature positioning.
               </p>
-              <p>
-                Product packaging changes. This comparison was reviewed against
-                public vendor information on September 28, 2026. Confirm current
-                availability, implementation requirements, and commercial terms
-                directly with each vendor.
-              </p>
+              <div className="comparison-summary comparison-method-note">
+                <p>
+                  <strong>Included</strong> means the product offers the feature
+                  group as defined in that row. <strong>Not offered</strong>{" "}
+                  means the complete feature group is not offered, even when a
+                  platform may provide individual pieces.{" "}
+                  <strong>Available by package</strong> means access depends on
+                  a separate product or plan.{" "}
+                  <strong>Not publicly documented</strong> means the reviewed
+                  vendor materials did not establish the full capability.
+                </p>
+                <p>
+                  Product packaging changes. This comparison was reviewed
+                  against public vendor information on September 28, 2026.
+                  Confirm current availability, implementation requirements, and
+                  commercial terms directly with each vendor.
+                </p>
+              </div>
             </div>
           </div>
         </section>
