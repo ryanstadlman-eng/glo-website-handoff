@@ -25,7 +25,7 @@ export default function StaffingWorldCampaign() {
             <Button asChild size="lg" className="glo-button">
               <Link href="/staffing-world-glo-up/">Schedule a Glo Up <span className="action-glyph">↗</span></Link>
             </Button>
-            <p>October 12–14, 2026</p>
+            <p>October 12–14, 2026 • Booth 314</p>
           </div>
         </div>
       </div>

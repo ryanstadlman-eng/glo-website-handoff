@@ -42,6 +42,7 @@ const builtForLinks: NavigationLink[] = [
 
 const whyGloLinks: NavigationLink[] = [
   { label: "Staffing software", href: "/staffing-software/" },
+  { label: "Compare staffing software", href: "/compare/" },
   { label: "Staffing agency software", href: "/staffing-agency-software/" },
   { label: "Applicant tracking", href: "/applicant-tracking-system/" },
   { label: "Recruitment CRM", href: "/recruitment-crm/" },

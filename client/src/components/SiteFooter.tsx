@@ -4,8 +4,8 @@
  */
 import { Link } from "wouter";
 
-const LOGO = "/manus-storage/glo-cyan-no-tm_09e4b011.svg";
-const LANTERN_LOGO = "/manus-storage/lantern_logo_on_dark_2bbf7233.svg";
+const LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
+const LANTERN_LOGO = "/images/lantern_logo_on_dark_2bbf7233.svg";
 
 const columns = [
   {
@@ -27,7 +27,8 @@ const columns = [
   {
     title: "Why Glo",
     links: [
-      ["Staffing software", "/staffing-software/"], ["Staffing agency software", "/staffing-agency-software/"],
+      ["Staffing software", "/staffing-software/"], ["Compare staffing software", "/compare/"],
+      ["Staffing agency software", "/staffing-agency-software/"],
       ["Applicant tracking", "/applicant-tracking-system/"], ["Recruitment CRM", "/recruitment-crm/"],
       ["Candidate matching", "/candidate-matching/"],
     ],

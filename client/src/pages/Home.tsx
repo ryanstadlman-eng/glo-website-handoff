@@ -11,8 +11,9 @@ import PageMeta from "@/components/PageMeta";
 import OperationalProof from "@/components/OperationalProof";
 import HeroProductDemo from "@/components/HeroProductDemo";
 import StaffingWorldCampaign from "@/components/StaffingWorldCampaign";
+import ComparisonTable from "@/components/ComparisonTable";
 
-const GLO_LOGO = "/manus-storage/glo-cyan-no-tm_09e4b011.svg";
+const GLO_LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 
 const experiences = [
   {
@@ -111,6 +112,23 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="home-comparison-preview" aria-labelledby="home-comparison-heading">
+          <div className="container">
+            <div className="home-comparison-heading">
+              <div>
+                <p className="signal-label text-cyan">Staffing software comparison</p>
+                <h2 id="home-comparison-heading">See what changes when intelligence is built in.</h2>
+              </div>
+              <div>
+                <p>Compare Glo with Bullhorn, Avionté, Spott, Aqore, and JobDiva across the workflows that shape candidate, client, and recruiter outcomes.</p>
+                <Link href="/compare/" className="text-link">See the full staffing software comparison <span className="action-glyph">→</span></Link>
+              </div>
+            </div>
+            <ComparisonTable compact />
+            <p className="comparison-scroll-hint">On smaller screens, scroll the table horizontally to compare every platform.</p>
+          </div>
+        </section>
+
         <section className="experiences-section">
           <div className="container">
             <div className="section-heading-row">
@@ -180,7 +198,7 @@ export default function Home() {
               ].map(([title, copy]) => (
                 <div key={title} className="reasoning-row">
                   <span className="reasoning-g-frame" aria-hidden="true">
-                    <img className="reasoning-g-mark" src="/manus-storage/glo-g-circle-authoritative_b31f5550.svg" alt="" />
+                    <img className="reasoning-g-mark" src="/images/glo-g-circle-authoritative_b31f5550.svg" alt="" />
                   </span>
                   <div><strong>{title}</strong><p>{copy}</p></div>
                 </div>
@@ -198,7 +216,7 @@ export default function Home() {
             </div>
             <div className="execution-board">
               <div className="product-shot product-shot-submissions">
-                <img src="/manus-storage/glo-home-move-candidates_80a98294.webp" alt="Glo Candidates view showing candidate profiles, current stage, recruiter, ranking, and recommended action" />
+                <img src="/images/glo-home-move-candidates_80a98294.webp" alt="Glo Candidates view showing candidate profiles, current stage, recruiter, ranking, and recommended action" />
               </div>
               <div className="product-shot-caption"><span>Live operating view</span><strong>Priority becomes the next move.</strong></div>
             </div>
@@ -273,7 +291,7 @@ export default function Home() {
                   <div key={title}>
                     <strong className="trust-item-title">
                       <span className="trust-title-g-frame" aria-hidden="true">
-                        <img src="/manus-storage/glo-g-circle-authoritative_b31f5550.svg" alt="" />
+                        <img src="/images/glo-g-circle-authoritative_b31f5550.svg" alt="" />
                       </span>
                       <span>{title}</span>
                     </strong>

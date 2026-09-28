@@ -12,6 +12,7 @@ import ContactPage from "@/pages/ContactPage";
 import ContentPage from "@/pages/ContentPage";
 import LegalPage from "@/pages/LegalPage";
 import StaffingWorldPage from "@/pages/StaffingWorldPage";
+import ComparePage from "@/pages/ComparePage";
 import { Route, Router as WouterRouter, Switch } from "wouter";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/book-a-demo/" component={DemoPage} />
       <Route path="/contact/" component={ContactPage} />
       <Route path="/staffing-world-glo-up/" component={StaffingWorldPage} />
+      <Route path="/compare/" component={ComparePage} />
       <Route path="/privacy/" component={LegalPage} />
       <Route path="/security/" component={LegalPage} />
       <Route path="/terms/" component={LegalPage} />
