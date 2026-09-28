@@ -2957,8 +2957,8 @@ body,
 }
 .lantern-parent-mark {
   display: block;
-  width: 8rem;
-  height: 1.75rem;
+  width: auto;
+  height: 13px;
   object-fit: contain;
 }
 .brand-family-divider {
@@ -2980,8 +2980,8 @@ body,
 }
 .mobile-lantern-mark {
   display: block;
-  width: 6.75rem;
-  height: 1.5rem;
+  width: auto;
+  height: 13px;
   object-fit: contain;
 }
 .mobile-brand-divider {
@@ -2998,8 +2998,8 @@ body,
 @media (max-width: 639px) {
   .brand-family-lockup { gap: .55rem; }
   .lantern-parent-mark {
-    width: 5.6rem;
-    height: 1.3rem;
+    width: auto;
+    height: 13px;
   }
   .brand-family-divider { height: 1.3rem; }
   .site-header .brand-mark {
@@ -5153,20 +5153,14 @@ body,
   height: 1.12em;
   transform: translateY(.17em);
 }
-.comparison-title-logo,
-.comparison-title-logo-glow {
+.comparison-title-logo {
   position: absolute;
-  inset: 0;
+  top: -18.58%;
+  left: -15.78%;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.comparison-title-logo-glow {
-  filter:
-    drop-shadow(0 0 8px rgba(48, 198, 190, .88))
-    drop-shadow(0 0 18px rgba(0, 189, 255, .58))
-    drop-shadow(0 0 30px rgba(0, 189, 255, .32));
+  width: 131.55%;
+  max-width: none;
+  height: 137.15%;
 }
 .comparison-title-rest { display: block; }
 .comparison-summary {

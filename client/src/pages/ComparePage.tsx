@@ -5,8 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageMeta from "@/components/PageMeta";
 import ComparisonTable from "@/components/ComparisonTable";
 
-const GLO_LOGO = "/images/glo-wordmark-comparison.png";
-const GLO_G_GLOW = "/images/glo-wordmark-g-glow.png";
+const GLO_LOGO = "/images/glo-wordmark-comparison-glow.png";
 
 export default function ComparePage() {
   return (
@@ -33,11 +32,6 @@ export default function ComparePage() {
                   aria-hidden="true"
                 >
                   <span className="comparison-title-logo-stack">
-                    <img
-                      src={GLO_G_GLOW}
-                      alt=""
-                      className="comparison-title-logo-glow"
-                    />
                     <img
                       src={GLO_LOGO}
                       alt=""
