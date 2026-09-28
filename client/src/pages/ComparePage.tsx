@@ -4,7 +4,8 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageMeta from "@/components/PageMeta";
 import ComparisonTable from "@/components/ComparisonTable";
-import { comparisonSources } from "@/lib/comparison";
+
+const GLO_LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 
 export default function ComparePage() {
   return (
@@ -23,8 +24,18 @@ export default function ComparePage() {
             <p className="signal-label text-cyan">
               Staffing software comparison
             </p>
-            <h1>
-              <span>Glo</span> vs. the competition.
+            <h1 className="comparison-title">
+              <span className="comparison-title-line">
+                <span className="sr-only">Glo </span>
+                <img
+                  src={GLO_LOGO}
+                  alt=""
+                  aria-hidden="true"
+                  className="comparison-title-logo"
+                />
+                <span>vs. the</span>
+              </span>
+              <span className="comparison-title-rest"> competition.</span>
             </h1>
             <div className="comparison-summary">
               <p>
@@ -42,6 +53,10 @@ export default function ComparePage() {
             </div>
 
             <ComparisonTable />
+            <p className="comparison-source-note">
+              Official vendor pages were used to verify product identity and
+              current public feature positioning.
+            </p>
             <p className="comparison-scroll-hint">
               On smaller screens, scroll the table horizontally to compare every
               platform.
@@ -76,33 +91,8 @@ export default function ComparePage() {
           </div>
         </section>
 
-        <section className="comparison-sources">
-          <div className="container">
-            <div className="comparison-sources-heading">
-              <div>
-                <p className="signal-label">Primary sources</p>
-                <h2>Product information reviewed.</h2>
-              </div>
-              <p>
-                Official vendor pages were used to verify product identity and
-                current public feature positioning.
-              </p>
-            </div>
-            <ul className="comparison-source-list">
-              {comparisonSources.map(source => (
-                <li key={source.vendor}>
-                  <span>{source.vendor}</span>
-                  <a href={source.href} target="_blank" rel="noreferrer">
-                    {source.label} <i aria-hidden="true">↗</i>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="comparison-cta">
-          <div className="container comparison-cta-grid">
+        <section className="product-story-cta comparison-story-cta">
+          <div className="container product-story-cta-grid">
             <div>
               <h2>See the difference in a real desk.</h2>
               <p>
@@ -110,7 +100,7 @@ export default function ComparePage() {
                 operating picture into the next best move.
               </p>
             </div>
-            <Button asChild size="lg" className="glo-button home-close-button">
+            <Button asChild size="lg" className="glo-button">
               <Link href="/book-a-demo/">
                 Book a demo <span className="action-glyph">↗</span>
               </Link>

@@ -146,31 +146,3 @@ export const compactComparisonRowIds = [
   "client-crm",
   "intelligence-insights",
 ];
-
-export const comparisonSources = [
-  {
-    vendor: "Bullhorn",
-    href: "https://www.bullhorn.com/pricing/",
-    label: "Bullhorn product packaging",
-  },
-  {
-    vendor: "Avionté",
-    href: "https://www.avionte.com/staffing-software-platform/",
-    label: "Avionté staffing software platform",
-  },
-  {
-    vendor: "Spott",
-    href: "https://spott.io/",
-    label: "Spott AI-native ATS and CRM",
-  },
-  {
-    vendor: "Aqore",
-    href: "https://www.aqore.com/products/zenople-by-aqore/",
-    label: "Zenople by Aqore",
-  },
-  {
-    vendor: "JobDiva",
-    href: "https://www.jobdiva.com/ats-software-for-staffing-agencies",
-    label: "JobDiva staffing ATS platform",
-  },
-];
