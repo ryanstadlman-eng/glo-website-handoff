@@ -6,6 +6,7 @@ import PageMeta from "@/components/PageMeta";
 import ComparisonTable from "@/components/ComparisonTable";
 
 const GLO_LOGO = "/images/glo-wordmark-comparison.png";
+const GLO_G_GLOW = "/images/glo-wordmark-g-glow.png";
 
 export default function ComparePage() {
   return (
@@ -31,11 +32,18 @@ export default function ComparePage() {
                   className="comparison-title-logo-frame"
                   aria-hidden="true"
                 >
-                  <img
-                    src={GLO_LOGO}
-                    alt=""
-                    className="comparison-title-logo"
-                  />
+                  <span className="comparison-title-logo-stack">
+                    <img
+                      src={GLO_G_GLOW}
+                      alt=""
+                      className="comparison-title-logo-glow"
+                    />
+                    <img
+                      src={GLO_LOGO}
+                      alt=""
+                      className="comparison-title-logo"
+                    />
+                  </span>
                 </span>
                 <span>vs. the</span>
               </span>
