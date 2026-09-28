@@ -11,7 +11,7 @@ import { getNavigationContext, navGroups, normalizeNavigationPath } from "@/lib/
 const LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 const LANTERN_LOGO = "/images/lantern_logo_nav_transparent_9b35580b.svg";
 const LANTERN_HOME = "https://lanternglobal.ai";
-const EVENT_TICKER_MESSAGE = "Join Glo at Staffing World 2026 • October 12–14 • Denver, Colorado";
+const EVENT_TICKER_MESSAGE = "Join Glo at Staffing World 2026 • Booth 314 • October 12–14 • Denver, Colorado";
 const EVENT_TICKER_ITEMS = Array.from({ length: 4 });
 
 export default function SiteHeader() {
@@ -91,7 +91,7 @@ export default function SiteHeader() {
       <Link
         href="/staffing-world-glo-up/"
         className="event-ticker"
-        aria-label="Staffing World 2026, October 12 through 14 in Denver, Colorado"
+        aria-label="Staffing World 2026, Booth 314, October 12 through 14 in Denver, Colorado"
       >
         <span className="event-ticker-viewport" aria-hidden="true">
           <span className="event-ticker-track">
