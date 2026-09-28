@@ -11,6 +11,7 @@ import PageMeta from "@/components/PageMeta";
 import OperationalProof from "@/components/OperationalProof";
 import HeroProductDemo from "@/components/HeroProductDemo";
 import StaffingWorldCampaign from "@/components/StaffingWorldCampaign";
+import ComparisonTable from "@/components/ComparisonTable";
 
 const GLO_LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 
@@ -108,6 +109,23 @@ export default function Home() {
                 ].map((item) => <div key={item}><span>+</span>{item}</div>)}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="home-comparison-preview" aria-labelledby="home-comparison-heading">
+          <div className="container">
+            <div className="home-comparison-heading">
+              <div>
+                <p className="signal-label text-cyan">Staffing software comparison</p>
+                <h2 id="home-comparison-heading">See what changes when intelligence is built in.</h2>
+              </div>
+              <div>
+                <p>Compare Glo with Bullhorn, Avionté, Spott, Aqore, and JobDiva across the workflows that shape candidate, client, and recruiter outcomes.</p>
+                <Link href="/compare/" className="text-link">See the full staffing software comparison <span className="action-glyph">→</span></Link>
+              </div>
+            </div>
+            <ComparisonTable compact />
+            <p className="comparison-scroll-hint">On smaller screens, scroll the table horizontally to compare every platform.</p>
           </div>
         </section>
 

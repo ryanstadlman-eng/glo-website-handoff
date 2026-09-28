@@ -27,7 +27,8 @@ const columns = [
   {
     title: "Why Glo",
     links: [
-      ["Staffing software", "/staffing-software/"], ["Staffing agency software", "/staffing-agency-software/"],
+      ["Staffing software", "/staffing-software/"], ["Compare staffing software", "/compare/"],
+      ["Staffing agency software", "/staffing-agency-software/"],
       ["Applicant tracking", "/applicant-tracking-system/"], ["Recruitment CRM", "/recruitment-crm/"],
       ["Candidate matching", "/candidate-matching/"],
     ],
