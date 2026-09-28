@@ -61,7 +61,7 @@ export const comparisonRows: ComparisonRow[] = [
     details: "Core CRM and payroll processing",
     statuses: {
       glo: "Included",
-      bullhorn: "Available by package",
+      bullhorn: "Included",
       avionte: "Included",
       spott: "Not offered",
       aqore: "Included",
