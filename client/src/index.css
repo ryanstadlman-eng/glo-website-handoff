@@ -5135,12 +5135,13 @@ body,
   display: flex;
   align-items: center;
   gap: .13em;
+  margin-bottom: .06em;
   white-space: nowrap;
 }
 .comparison-title-logo-frame {
   display: flex;
-  width: .98em;
-  height: 1em;
+  width: 1.34em;
+  height: 1.18em;
   flex: 0 0 auto;
   align-items: center;
   justify-content: flex-start;
@@ -5149,8 +5150,9 @@ body,
   display: block;
   width: auto;
   max-width: none;
-  height: .82em;
+  height: 1.12em;
   filter: drop-shadow(0 0 14px rgba(48, 198, 190, .34));
+  transform: translateY(.17em);
 }
 .comparison-title-rest { display: block; }
 .comparison-summary {
