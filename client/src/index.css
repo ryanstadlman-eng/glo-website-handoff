@@ -5384,3 +5384,65 @@ body,
   .home-comparison-preview { border-radius: 1.8rem .55rem 1.8rem 1.8rem; }
   .home-comparison-preview .comparison-table { min-width: 64rem; }
 }
+
+/* TalentLaunch network: approved logos rendered in Glo navy on cream. */
+.network-banner {
+  overflow: hidden;
+  padding-block: clamp(1.15rem, 2.3vw, 1.65rem);
+  border-block: 1px solid rgba(40, 44, 55, .12);
+  background: #f0e9dc;
+  color: #282c37;
+}
+.network-banner-viewport { overflow: hidden; }
+.network-banner-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: network-banner-travel 46s linear infinite;
+  will-change: transform;
+}
+.network-banner-list {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: clamp(2.25rem, 4vw, 4.5rem);
+  margin: 0;
+  padding: 0 clamp(2.25rem, 4vw, 4.5rem) 0 0;
+  list-style: none;
+}
+.network-banner-item {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+.network-banner-item img {
+  display: block;
+  width: auto;
+  max-width: 220px;
+  height: 44px;
+  object-fit: contain;
+}
+.network-banner:hover .network-banner-track { animation-play-state: paused; }
+@keyframes network-banner-travel {
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 640px) {
+  .network-banner { padding-block: 1.1rem; }
+  .network-banner-item img { max-width: 185px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .network-banner-track {
+    display: block;
+    width: auto;
+    animation: none;
+    will-change: auto;
+  }
+  .network-banner-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    padding: .6rem 1.15rem;
+  }
+  .network-banner-list[aria-hidden="true"] { display: none; }
+}
