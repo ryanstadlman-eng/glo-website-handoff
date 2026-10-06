@@ -85,8 +85,8 @@ export default function Home() {
           </div>
         </section>
 
-        <StaffingWorldCampaign />
         <TalentLaunchNetworkBanner />
+        <StaffingWorldCampaign />
 
         <section className="category-section home-ats-comparison">
           <div className="container category-grid">
