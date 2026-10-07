@@ -1420,11 +1420,30 @@ body,
   box-shadow: inset 1px 0 0 rgba(48,198,190,.3), inset -1px 0 0 rgba(48,198,190,.3) !important;
 }
 .compare-glo > div:not(.compare-title) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1rem;
   border-top-color: rgba(240,233,220,.16);
   background: transparent !important;
   color: #f0e9dc;
 }
-.compare-glo > div:not(.compare-title) span { color: #30c6be; }
+.compare-glo > div:not(.compare-title) .compare-glo-benefit {
+  display: inline-flex;
+  width: min(100%, 13.5rem);
+  min-height: 3.3rem;
+  align-items: center;
+  justify-content: center;
+  padding: .55rem .7rem;
+  border: 1px solid rgba(48,198,190,.48);
+  border-radius: .45rem;
+  background: #30c6be;
+  color: #1f222b;
+  box-shadow: 0 0 20px rgba(48,198,190,.24);
+  font-weight: 700;
+  line-height: 1.24;
+  text-align: center;
+}
 
 /* Diagram semantics remain clear using only the approved palette. */
 .stack-link-in { stroke: rgba(40,44,55,.52); }

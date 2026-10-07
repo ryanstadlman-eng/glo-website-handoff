@@ -108,7 +108,7 @@ export default function Home() {
                 <p className="compare-title compare-title-glo"><img src={GLO_LOGO} alt="Glo" /></p>
                 {[
                   "Evaluates candidate readiness", "Predicts job-order risk", "Surfaces the next move", "Prioritizes business impact",
-                ].map((item) => <div key={item}><span>+</span>{item}</div>)}
+                ].map((item) => <div key={item}><span className="compare-glo-benefit">{item}</span></div>)}
               </div>
             </div>
           </div>
