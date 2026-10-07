@@ -12,6 +12,7 @@ import OperationalProof from "@/components/OperationalProof";
 import HeroProductDemo from "@/components/HeroProductDemo";
 import StaffingWorldCampaign from "@/components/StaffingWorldCampaign";
 import ComparisonTable from "@/components/ComparisonTable";
+import TalentLaunchNetworkBanner from "@/components/TalentLaunchNetworkBanner";
 
 const GLO_LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 
@@ -84,6 +85,7 @@ export default function Home() {
           </div>
         </section>
 
+        <TalentLaunchNetworkBanner />
         <StaffingWorldCampaign />
 
         <section className="category-section home-ats-comparison">
