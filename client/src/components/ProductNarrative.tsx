@@ -7,9 +7,9 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 const G_MARK = "/images/glo-g-circle-authoritative_b31f5550.svg";
-const GROWTH_PIPELINE = "https://helloglo.vinceorodazo.com/recruiter-os-crm-pipeline_1e711356.png";
-const SUBMISSIONS_WORKFLOW = "/images/glo-client-room-submissions_ce7a6397.webp";
-const BILLING_WORKFLOW = "https://helloglo.vinceorodazo.com/recruiter-os-billing-workflow_4eabdb12.png";
+const GROWTH_PIPELINE = "/images/glo-the-desk-crm-pipeline-20261009-43e0cb3d.webp";
+const CLIENT_ROOM = "/images/glo-client-room-20261009-d08c0708.webp";
+const BILLING_WORKFLOW = "/images/glo-billing-workflow-20261009-dd68a245.webp";
 
 type NarrativeKind = "recruiter" | "client" | "intelligence" | "integrations";
 
@@ -129,13 +129,13 @@ function RecruiterOSNarrative() {
             <p>Prospects, opportunities, and job orders flow into the system recruiters already work from. A new client becomes a working job order in minutes. One continuous workstream, from win to fill, without any handoffs.</p>
             <Link className="text-link" href="/recruitment-crm/">Explore Recruitment CRM <span className="action-glyph">↗</span></Link>
           </div>
-          <figure className="product-story-media"><img src={GROWTH_PIPELINE} alt="Glo CRM pipeline showing the visual sales funnel, stage values, forecast, and top opportunities" /></figure>
+          <figure className="product-story-media product-story-media-current-capture"><img src={GROWTH_PIPELINE} width={1790} height={944} loading="lazy" decoding="async" alt="Glo CRM Pipeline showing prospect and buyer contacts, opportunities, clients, job orders, visual sales funnel, and weighted forecast" /></figure>
         </div>
       </section>
 
       <section className="product-story-section product-story-section-base product-story-screenshot-section">
         <div className="container product-story-split product-story-split-media product-story-split-media-reverse product-story-split-screenshot product-story-split-screenshot-reverse">
-          <figure className="product-story-media"><img src={BILLING_WORKFLOW} alt="Glo billing workflow showing open payroll issues, sync activity, status, ownership, and actions" /></figure>
+          <figure className="product-story-media product-story-media-current-capture"><img src={BILLING_WORKFLOW} width={1792} height={910} loading="lazy" decoding="async" alt="Glo Billing Workflow showing open payroll and ADP sync issues, severity, affected records, ownership, status, and actions" /></figure>
           <div className="product-story-copy">
             <div className="product-story-section-label"><strong>Placements, compliance &amp; billing</strong></div>
             <h2>Placements, compliance, and billing. No spreadsheet backup required.</h2>
@@ -195,10 +195,10 @@ function RecruiterOSNarrative() {
         <div className="container">
           <div className="product-story-heading-row product-story-heading-row-intelligence">
             <div className="product-story-heading-block">
-              <h2>Meet Lucia.</h2>
+              <h2>Meet Luci.</h2>
             </div>
             <span className="product-story-heading-divider" aria-hidden="true" />
-            <p>Ask Lucia what matters right now and she’ll tell you: the candidate ready to move, the job at risk, the client waiting on an answer. She reasons across the whole picture, ranks the work, and handles it herself when you give her the green light.</p>
+            <p>Ask Luci what matters right now and she’ll tell you: the candidate ready to move, the job at risk, the client waiting on an answer. She reasons across the whole picture, ranks the work, and handles it herself when you give her the green light.</p>
           </div>
           <div className="product-story-reasoning">
             {recruiterSteps.map(([title, copy], index) => <article key={title}><span className="product-story-stage-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}
@@ -274,7 +274,7 @@ function ClientRoomNarrative() {
             <h2>{clientCandidateVisibility.title}</h2>
             {clientCandidateVisibility.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
-          <figure className="product-story-media"><img src={SUBMISSIONS_WORKFLOW} alt="Glo submissions view showing candidate stage, priority, recruiter, match, and next action" /></figure>
+          <figure className="product-story-media product-story-media-current-capture"><img src={CLIENT_ROOM} width={1794} height={876} loading="lazy" decoding="async" alt="Glo Client Room showing candidates in process, placement stages, role, recruiter, AI match, quick ratings, and actions" /></figure>
         </div>
       </section>
       <section className="product-story-section product-story-section-base">

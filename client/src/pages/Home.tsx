@@ -217,8 +217,8 @@ export default function Home() {
               <h2>Move candidates.<br />Fill jobs.<br /><span>Faster.</span></h2>
             </div>
             <div className="execution-board">
-              <div className="product-shot product-shot-submissions">
-                <img src="/images/glo-home-move-candidates_80a98294.webp" alt="Glo Candidates view showing candidate profiles, current stage, recruiter, ranking, and recommended action" />
+              <div className="product-shot product-shot-submissions product-shot-current-capture">
+                <img src="/images/glo-move-candidates-20261009-45a7dd19.webp" width={1780} height={1012} loading="lazy" decoding="async" alt="Glo Candidates view showing candidate records, visibility, submitted status, recruiter, match readiness, and priority actions" />
               </div>
               <div className="product-shot-caption"><span>Live operating view</span><strong>Priority becomes the next move.</strong></div>
             </div>

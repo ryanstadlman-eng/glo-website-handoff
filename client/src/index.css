@@ -3269,7 +3269,16 @@ body,
 
 .product-story-split-media { grid-template-columns: minmax(0, .78fr) minmax(28rem, 1.22fr); }
 .product-story-split-media-reverse { grid-template-columns: minmax(28rem, 1.22fr) minmax(0, .78fr); }
-.product-story-media { margin: 0; overflow: hidden; background: #fff; border: 1px solid rgba(40, 44, 55, .16); border-top: .42rem solid var(--story-cyn); }
+.product-story-media {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(40, 44, 55, .12);
+  border-top: .48rem solid var(--story-cyn);
+  border-radius: 1.8rem .5rem 1.8rem 1.8rem;
+  background: var(--story-white);
+  box-shadow: 0 1.15rem 2.8rem rgba(40, 44, 55, .09);
+}
 .product-story-media img { display: block; width: 100%; height: auto; }
 .product-story-contract { background: #fff; color: var(--story-dark); border-top: .42rem solid var(--story-amber); }
 .product-story-contract > div { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.25rem 1.4rem; border-bottom: 1px solid rgba(40, 44, 55, .14); }
@@ -3742,13 +3751,6 @@ body,
 }
 .product-story-recruiter .product-story-split-screenshot .product-story-media {
   align-self: start;
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid rgba(40, 44, 55, .12);
-  border-top: .48rem solid var(--story-cyn);
-  border-radius: 1.8rem .5rem 1.8rem 1.8rem;
-  background: var(--story-white);
-  box-shadow: 0 1.15rem 2.8rem rgba(40, 44, 55, .09);
 }
 .product-story-recruiter .product-story-split-screenshot .product-story-media img {
   display: block;
@@ -4544,49 +4546,75 @@ body,
   box-shadow: inset 0 0 0 1px rgba(40, 44, 55, .055);
 }
 
-/* Hero proof and workflow restoration: the screen sits below the billboard,
-   actions stay attached to the proof, and all three supplied captures preserve
-   their true right edge while cropping only excess left application chrome. */
-@media (min-width: 1024px) {
-  .home-hero .hero-demo-media-growth,
-  .home-hero .hero-demo-media-delivery,
-  .home-hero .hero-demo-media-finance {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 1.34 / 1;
-    background: #fff;
+/* Current software captures: preserve every supplied edge at native proportions.
+   Aspect ratio is supplied by each capture; no viewport-specific crop. */
+.home-hero .hero-demo-media {
+  height: auto;
+  min-height: 0;
+  background: #fff;
+}
+.home-hero .hero-demo-media > img {
+  position: static;
+  display: block;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.home-hero .hero-demo-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+.home-hero .hero-demo-tab {
+  height: 3.15rem;
+  gap: .45rem;
+  flex-wrap: nowrap;
+  padding: .55rem .45rem;
+  line-height: 1.35;
+  border-bottom-width: 3px;
+  transform: none;
+}
+.home-hero .hero-demo-tab:hover,
+.home-hero .hero-demo-tab:focus-visible { transform: none; }
+.home-hero .hero-demo-tab > span { display: inline; }
+.home-hero .hero-demo-tab .hero-demo-code {
+  display: inline !important;
+  flex: 0 0 2ch;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .home-hero .hero-demo-tab {
+    display: grid;
+    grid-template-rows: 1em 2.7em;
+    justify-items: center;
+    align-content: center;
+    height: 4.25rem;
+    gap: .4rem;
+    padding: .5rem .3rem;
   }
-  .home-hero .hero-demo-media-growth img,
-  .home-hero .hero-demo-media-delivery img,
-  .home-hero .hero-demo-media-finance img {
-    inset: 0;
-    left: 0;
+  .home-hero .hero-demo-tab > span:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.7em;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right top;
   }
 }
-
-@media (max-width: 1023px) {
-  .home-hero .hero-demo-media-growth,
-  .home-hero .hero-demo-media-delivery,
-  .home-hero .hero-demo-media-finance {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 2048 / 1248;
-    background: #fff;
-  }
-  .home-hero .hero-demo-media-growth img,
-  .home-hero .hero-demo-media-delivery img,
-  .home-hero .hero-demo-media-finance img {
-    inset: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
+.glo-site .execution-board .product-shot-current-capture {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1780 / 1012;
+}
+.glo-site .execution-board .product-shot-current-capture > img,
+.glo-site .product-story-media-current-capture > img {
+  position: static;
+  display: block;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* The right column is a real flow container, not a second grid row. This keeps
