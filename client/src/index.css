@@ -4105,6 +4105,7 @@ body,
    block below so old shared offsets cannot diverge between tabs. */
 .glo-site .execution-board {
   padding: 0;
+  border-top: .48rem solid #30c6be;
   background: #fffefb;
 }
 .glo-site .execution-board .product-shot {
@@ -4112,7 +4113,7 @@ body,
   aspect-ratio: 1.9 / 1;
   padding: 0;
   background: #fff;
-  border-radius: 2.3rem 2.3rem 0 0;
+  border-radius: 0;
 }
 .glo-site .execution-board .product-shot img {
   position: absolute;
