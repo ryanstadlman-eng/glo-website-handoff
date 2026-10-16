@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <div className="glo-site">
       <PageMeta
-        title="AI-Native Staffing & Recruiting Software | Glo by Lantern"
+        title="AI-Native ATS Software"
         description="Glo is AI-native staffing and recruiting software that turns candidate, job, client, contract, compliance, and revenue signals into the next best action."
         path="/"
       />
@@ -63,7 +63,7 @@ export default function Home() {
               <div className="hero-brand-billboard">
                 <img src={GLO_LOGO} alt="Glo" />
               </div>
-              <h1 className="product-spec">Staffing software finally built for the <span className="hero-outcome">AI era.</span></h1>
+              <h1 className="product-spec">More Than an <span className="hero-outcome">ATS</span></h1>
               <p className="hero-lede">
                 There’s the old way of running a desk, and there’s Glo. Glo goes beyond traditional staffing software, turning everything happening across your desk into clear action. Candidate, job, client, contract, compliance, and revenue signals are ranked to surface the move that matters right now.
               </p>
