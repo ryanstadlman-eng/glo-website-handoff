@@ -14,20 +14,24 @@ import SiteHeader from "@/components/SiteHeader";
 import { sendToFormspree } from "@/lib/formspree";
 import {
   gloUpSubject,
-  STAFFING_WORLD_DATES,
-  STAFFING_WORLD_LOGO,
-  STAFFING_WORLD_TIMES,
-  type StaffingWorldTime,
-} from "@/lib/staffingWorld";
+  CONFERENCE_DATES,
+  CONFERENCE_DATE_LABEL,
+  CONFERENCE_LOCATION,
+  CONFERENCE_LOGO,
+  CONFERENCE_NAME,
+  CONFERENCE_PATH,
+  CONFERENCE_TIMES,
+  type ConferenceTime,
+} from "@/lib/conference";
 
 export default function StaffingWorldPage() {
   const [selectedDateId, setSelectedDateId] = useState<string | null>(null);
-  const [selectedTime, setSelectedTime] = useState<StaffingWorldTime | null>(null);
+  const [selectedTime, setSelectedTime] = useState<ConferenceTime | null>(null);
   const [requestLaunched, setRequestLaunched] = useState(false);
   const [sending, setSending] = useState(false);
 
   const selectedDate = useMemo(
-    () => STAFFING_WORLD_DATES.find((date) => date.id === selectedDateId) ?? null,
+    () => CONFERENCE_DATES.find((date) => date.id === selectedDateId) ?? null,
     [selectedDateId],
   );
 
@@ -37,7 +41,7 @@ export default function StaffingWorldPage() {
     setRequestLaunched(false);
   };
 
-  const chooseTime = (time: StaffingWorldTime) => {
+  const chooseTime = (time: ConferenceTime) => {
     setSelectedTime(time);
     setRequestLaunched(false);
   };
@@ -47,6 +51,8 @@ export default function StaffingWorldPage() {
     if (!selectedDate || !selectedTime || sending) return;
 
     const data = new FormData(event.currentTarget);
+    data.set("event", `${CONFERENCE_NAME} 2027`);
+    data.set("location", CONFERENCE_LOCATION);
     data.set("requestedDate", selectedDate.fullLabel);
     data.set("requestedTime", `${selectedTime} (conference local time)`);
 
@@ -66,23 +72,27 @@ export default function StaffingWorldPage() {
   };
 
   return (
-    <div className="glo-site staffing-world-page">
+    <div className="glo-site staffing-world-page executive-forum-page">
       <PageMeta
-        title="Schedule a Staffing World Glo Up | Glo by Lantern"
-        description="Meet with Glo at Staffing World 2026. Request an October 12, 13, or 14 Glo Up conversation about AI-native staffing and recruiting software."
-        path="/staffing-world-glo-up/"
+        title="Meet Glo at SIA Executive Forum North America 2027"
+        description="Meet Glo at SIA Executive Forum North America, March 8–11, 2027, in Miami Beach, Florida. Request a personally confirmed Glo Up conversation."
+        path={CONFERENCE_PATH}
       />
       <SiteHeader />
       <main className="staffing-world-main">
         <div className="container staffing-world-page-grid">
           <section className="staffing-world-intro" aria-labelledby="glo-up-title">
             <Link href="/" className="back-link"><span className="action-glyph">←</span> Back to Glo</Link>
-            <img src={STAFFING_WORLD_LOGO} alt="Staffing World 2026" />
+            <div className="conference-logo-plate conference-page-logo">
+              <img src={CONFERENCE_LOGO} width={127} height={74} alt="SIA Staffing Industry Analysts" />
+            </div>
+            <p className="conference-event-name">{CONFERENCE_NAME}</p>
             <h1 id="glo-up-title">Attending? We are too!</h1>
             <p>Bring the staffing workflow you want to move faster. We’ll show you how Glo sees the live operating picture and prioritizes what happens next.</p>
             <div className="staffing-world-event-facts">
-              <div><strong>October 12–14</strong><span>Three conference days</span></div>
-              <div><strong>9:00 AM–5:00 PM</strong><span>Hourly start times</span></div>
+              <div><strong>{CONFERENCE_DATE_LABEL}</strong><span>Four conference days</span></div>
+              <div><strong>{CONFERENCE_LOCATION}</strong><span>Conference location</span></div>
+              <div><strong>9:00 AM–5:00 PM</strong><span>Requested meeting times</span></div>
               <div><strong>Personal confirmation</strong><span>Glo will reply directly</span></div>
             </div>
           </section>
@@ -97,8 +107,8 @@ export default function StaffingWorldPage() {
               <>
                 <div className="glo-up-stage">
                   <div className="glo-up-stage-label"><span>01</span><strong>Choose a day</strong></div>
-                  <div className="glo-up-date-options" role="group" aria-label="Choose a Staffing World date">
-                    {STAFFING_WORLD_DATES.map((date) => (
+                  <div className="glo-up-date-options" role="group" aria-label="Choose an Executive Forum date">
+                    {CONFERENCE_DATES.map((date) => (
                       <button
                         key={date.id}
                         type="button"
@@ -118,7 +128,7 @@ export default function StaffingWorldPage() {
                   <div className="glo-up-stage-label"><span>02</span><strong>Choose a time</strong></div>
                   {selectedDate ? (
                     <div className="glo-up-time-options" role="group" aria-label={`Choose a time on ${selectedDate.fullLabel}`}>
-                      {STAFFING_WORLD_TIMES.map((time) => (
+                      {CONFERENCE_TIMES.map((time) => (
                         <button
                           key={time}
                           type="button"

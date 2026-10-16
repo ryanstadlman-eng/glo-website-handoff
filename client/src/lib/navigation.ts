@@ -106,12 +106,13 @@ routeContexts["/book-a-demo/"] = {
   siblingLinks: [],
 };
 
-routeContexts["/staffing-world-glo-up/"] = {
+routeContexts["/executive-forum-glo-up/"] = {
   divisionId: "event",
-  divisionLabel: "Staffing World",
+  divisionLabel: "Executive Forum",
   pageLabel: "Schedule a Glo Up",
   siblingLinks: [],
 };
+routeContexts["/staffing-world-glo-up/"] = routeContexts["/executive-forum-glo-up/"];
 
 export function normalizeNavigationPath(location: string) {
   const cleanPath = location.split(/[?#]/)[0] || "/";

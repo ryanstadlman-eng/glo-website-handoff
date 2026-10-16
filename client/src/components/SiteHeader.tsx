@@ -7,11 +7,12 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { getNavigationContext, navGroups, normalizeNavigationPath } from "@/lib/navigation";
+import { CONFERENCE_PATH, CONFERENCE_TICKER_LABEL, CONFERENCE_TICKER_MESSAGE } from "@/lib/conference";
 
 const LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 const LANTERN_LOGO = "/images/lantern_logo_nav_transparent_9b35580b.svg";
 const LANTERN_HOME = "https://lanternglobal.ai";
-const EVENT_TICKER_MESSAGE = "Join Glo at Staffing World 2026 • Booth 314 • October 12–14 • Denver, Colorado";
+const EVENT_TICKER_MESSAGE = CONFERENCE_TICKER_MESSAGE;
 const EVENT_TICKER_ITEMS = Array.from({ length: 4 });
 
 export default function SiteHeader() {
@@ -89,9 +90,9 @@ export default function SiteHeader() {
   return (
     <header className={`site-header${scrolled ? " site-header-scrolled" : ""}${dropdownSuppressed ? " is-dropdown-suppressed" : ""}`}>
       <Link
-        href="/staffing-world-glo-up/"
+        href={CONFERENCE_PATH}
         className="event-ticker"
-        aria-label="Staffing World 2026, Booth 314, October 12 through 14 in Denver, Colorado"
+        aria-label={CONFERENCE_TICKER_LABEL}
       >
         <span className="event-ticker-viewport" aria-hidden="true">
           <span className="event-ticker-track">

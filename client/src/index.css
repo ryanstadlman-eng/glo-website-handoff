@@ -2575,6 +2575,32 @@ body,
   width: min(100%,13rem);
   height: auto;
 }
+.conference-logo-plate {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  padding: 1rem 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+  background: #f0e9dc;
+}
+.staffing-world-logo-wrap .conference-logo-plate img,
+.conference-page-logo img {
+  display: block;
+  width: 127px;
+  max-width: 100%;
+  height: auto;
+}
+.staffing-world-copy .conference-event-name {
+  max-width: 34ch;
+  margin: 0 0 .9rem;
+  color: #f0e9dc;
+  font-family: "Space Grotesk",sans-serif;
+  font-size: clamp(1rem,1.35vw,1.2rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
 .staffing-world-copy h2 {
   max-width: 16ch;
   margin: 0;
@@ -2650,7 +2676,7 @@ body,
   margin: 0;
   color: #f0e9dc;
   font-family: "Space Grotesk",sans-serif;
-  font-size: clamp(3.7rem,5.8vw,7rem);
+  font-size: clamp(3.7rem,5vw,5.75rem);
   font-weight: 600;
   line-height: .9;
   letter-spacing: -.07em;
@@ -2661,6 +2687,19 @@ body,
   color: rgba(240,233,220,.68);
   font-size: clamp(1rem,1.35vw,1.18rem);
   line-height: 1.65;
+}
+.conference-page-logo {
+  grid-column: 1;
+  margin: clamp(2rem,4vw,3.75rem) 0 1.5rem;
+}
+.staffing-world-intro > .conference-event-name {
+  max-width: 32ch;
+  margin: 0 0 1.25rem;
+  color: #f0e9dc;
+  font-family: "Space Grotesk",sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 .staffing-world-event-facts {
   display: grid;
@@ -2737,7 +2776,7 @@ body,
 }
 .glo-up-date-options {
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(4,minmax(0,1fr));
   gap: .8rem;
 }
 .glo-up-date-options button {

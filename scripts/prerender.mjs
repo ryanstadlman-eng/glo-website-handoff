@@ -13,6 +13,7 @@ const compatibilityRoutes = [
   "/built-for/",
   "/built-for/healthcare-staffing/",
   "/recruiting-crm/",
+  "/staffing-world-glo-up/",
 ];
 
 function escapeAttribute(value) {
