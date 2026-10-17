@@ -2567,6 +2567,9 @@ body,
 .staffing-world-logo-wrap {
   display: grid;
   min-height: 9rem;
+  align-content: center;
+  gap: 1.1rem;
+  padding-right: 1.5rem;
   place-items: center;
   border-right: 1px solid rgba(240,233,220,.14);
 }
@@ -2592,14 +2595,22 @@ body,
   max-width: 100%;
   height: auto;
 }
-.staffing-world-copy .conference-event-name {
-  max-width: 34ch;
-  margin: 0 0 .9rem;
+.conference-event-details {
+  width: 100%;
+  max-width: 25ch;
+  margin: 0;
   color: #f0e9dc;
   font-family: "Space Grotesk",sans-serif;
-  font-size: clamp(1rem,1.35vw,1.2rem);
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: .95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.conference-event-details strong { font-weight: 600; }
+.conference-event-date { white-space: nowrap; }
+.conference-event-location {
+  display: block;
+  margin-top: .35rem;
+  color: rgba(240,233,220,.68);
 }
 .staffing-world-copy h2 {
   max-width: 16ch;
@@ -2613,7 +2624,7 @@ body,
 }
 .staffing-world-title-line {
   display: block;
-  width: max-content;
+  width: auto;
   max-width: 100%;
 }
 .staffing-world-title-line + .staffing-world-title-line { margin-top: .16em; }
@@ -2940,7 +2951,8 @@ body,
 @media (max-width: 780px) {
   .staffing-world-section { padding: 1.5rem 0; }
   .staffing-world-campaign { grid-template-columns: 1fr; gap: 1.5rem; }
-  .staffing-world-logo-wrap { min-height: 0; justify-items: start; border-right: 0; border-bottom: 1px solid rgba(240,233,220,.14); padding-bottom: 1.35rem; }
+  .staffing-world-logo-wrap { min-height: 0; justify-items: start; border-right: 0; border-bottom: 1px solid rgba(240,233,220,.14); padding-right: 0; padding-bottom: 1.35rem; }
+  .conference-event-details { max-width: 34ch; text-align: left; }
   .staffing-world-logo-wrap img { width: 10rem; }
   .staffing-world-copy h2 { max-width: 11ch; }
   .staffing-world-action { grid-column: 1; justify-content: space-between; }
