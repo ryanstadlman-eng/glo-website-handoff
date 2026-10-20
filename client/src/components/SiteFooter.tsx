@@ -3,9 +3,23 @@
  * with the approved mark, no promotional clutter, and one clear next move.
  */
 import { Link } from "wouter";
+import { Instagram, Linkedin } from "lucide-react";
 
 const LOGO = "/images/glo-cyan-no-tm_09e4b011.svg";
 const LANTERN_LOGO = "/images/lantern_logo_on_dark_2bbf7233.svg";
+
+const socialLinks = [
+  {
+    label: "Glo on Instagram",
+    href: "https://www.instagram.com/illuminatethedesk/",
+    Icon: Instagram,
+  },
+  {
+    label: "Glo on LinkedIn",
+    href: "https://www.linkedin.com/company/helloglo/",
+    Icon: Linkedin,
+  },
+];
 
 const columns = [
   {
@@ -50,6 +64,20 @@ export default function SiteFooter() {
           <div className="footer-brand">
             <img src={LOGO} alt="Glo" />
             <p>AI-native staffing and recruiting software built to move the work, not just record it.</p>
+            <nav className="footer-social" aria-label="Glo social profiles">
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={href}
+                  href={href}
+                  aria-label={`${label} (opens in a new tab)`}
+                  title={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon aria-hidden="true" size={22} strokeWidth={1.8} />
+                </a>
+              ))}
+            </nav>
           </div>
           {columns.map((column) => (
             <div key={column.title}>
